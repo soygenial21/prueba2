@@ -26,11 +26,13 @@ public class ControladorCasa {
         @RequestMapping(value = "/probar", method = RequestMethod.GET, produces = "application/json")
 	public Casa getQuestions() {
 
-		Casa product = new Casa();
+		Casa casa = new Casa();
+                casa.setValorCatastral(10000);
+                casa.setTipoDePredio("URBANO A");
+                casa.calcularDescuento(0);
+		servicio.getProductDiscount(casa);
 
-		servicio.getProductDiscount(product);
-
-		return product;
+		return casa;
 	}
     
 }

@@ -3,7 +3,7 @@ import com.worknest.modelo.Casa;
 
 rule "caso base"
     when
-    c : Casa()
+    c : Casa( tipoDePredio == "URBANO A")
     then
-    c.setPredial(255);
+    c.setPredial( c.getBaseGravable() * 0.012f );
 end
