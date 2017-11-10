@@ -1,0 +1,9 @@
+
+import com.worknest.modelo.Casa;
+
+rule "caso base"
+    when
+    c : Casa()
+    then
+    c.setPredial(255);
+end

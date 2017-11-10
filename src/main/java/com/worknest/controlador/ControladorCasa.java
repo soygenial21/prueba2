@@ -24,7 +24,7 @@ public class ControladorCasa {
 	}
         
         @RequestMapping(value = "/probar", method = RequestMethod.GET, produces = "application/json")
-	public Casa getQuestions(@RequestParam(required = true) String type) {
+	public Casa getQuestions() {
 
 		Casa product = new Casa();
 

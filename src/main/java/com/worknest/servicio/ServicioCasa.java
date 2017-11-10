@@ -21,12 +21,12 @@ public class ServicioCasa {
 		this.kieContainer = kieContainer;
 	}
         
-    public Casa getProductDiscount(Casa product) {
+    public Casa getProductDiscount(Casa casa) {
 		KieSession kieSession = kieContainer.newKieSession("rulesSession");
-		kieSession.insert(product);
+		kieSession.insert(casa);
 		kieSession.fireAllRules();
 		kieSession.dispose();
-		return product;
+		return casa;
 	}
     
 }
