@@ -5,7 +5,7 @@ package com.worknest.modelo;
 public class Casa {
     
     private String tipoDePredio;
-    
+    private String zona;
     private float valorCatastral;
     private float baseGravable;
     private float predial;
@@ -14,7 +14,8 @@ public class Casa {
     private float proEducacion;
     private float proTurismo;
     private float total;
-
+    private float dap;
+    
     public void calcularDescuento(float descuento){
         
         if(descuento > 0){
@@ -23,11 +24,11 @@ public class Casa {
         
         this.baseGravable = valorCatastral - descuento;
         
-        
-        
-        
     } //End void
     
+    public void calcularTotal(){
+        this.total = predial + proCaminos + proEducacion + proTurismo;
+    }
     
     
     /**
@@ -155,6 +156,35 @@ public class Casa {
     public void setTotal(float total) {
         this.total = total;
     }
+
+    /**
+     * @return the zona
+     */
+    public String getZona() {
+        return zona;
+    }
+
+    /**
+     * @param zona the zona to set
+     */
+    public void setZona(String zona) {
+        this.zona = zona;
+    }
+
+    /**
+     * @return the dap
+     */
+    public float getDap() {
+        return dap;
+    }
+
+    /**
+     * @param dap the dap to set
+     */
+    public void setDap(float dap) {
+        this.dap = dap;
+    }
+    
     
 
     

@@ -1,9 +1,126 @@
 
 import com.worknest.modelo.Casa;
 
-rule "caso base"
+//****************************************************************//
+//******************* CASOS POR TIPOS DE PREDIO*******************//
+
+//-------------------------------
+
+rule "BASE URBANO BALDIO"
     when
-    c : Casa( tipoDePredio == "URBANO A")
+    c : Casa( tipoDePredio == "URBANO BALDIO")
     then
     c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//-------------------------------
+
+rule "BASE URBANO EDIFICADO"
+    when
+    c : Casa( tipoDePredio == "URBANO EDIFICADO")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//-------------------------------
+
+rule "BASE SUBURBANO BALDIO"
+    when
+    c : Casa( tipoDePredio == "SUBURBANO BALDIO")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//-------------------------------
+
+rule "BASE SUBURBANO EDIFICADO"
+    when
+    c : Casa( tipoDePredio == "SUBURBANO EDIFICADO")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//-------------------------------
+
+rule "BASE RUSTICO BALDIO"
+    when
+    c : Casa( tipoDePredio == "RUSTICO BALDIO")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//--------------------------------
+
+rule "BASE RUSTICO EDIFICADO"
+    when
+    c : Casa( tipoDePredio == "RUSTICO EDIFICADO")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//--------------------------------
+
+rule "BASE EJIDALES"
+    when
+    c : Casa( tipoDePredio == "EJIDALES")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+//--------------------------------
+
+rule "BASE COMUNALES"
+    when
+    c : Casa( tipoDePredio == "COMUNALES")
+    then
+    c.setPredial( c.getBaseGravable() * 0.012f );
+end
+
+
+//****************************************************************//
+//******************* CASOS POR ZONAS*******************//
+
+//----------------------------------
+
+rule "ADICIONAL PRO EDUCACION"
+    when
+    c : Casa()
+    then
+    c.setProEducacion( c.getPredial() * 0.15f);
+end
+
+//----------------------------------
+
+rule "ADICIONAL TURISTICA A EDIFICADA"
+    when
+    c : Casa( zona == "TURISTICA A EDIFICADA")
+    then
+    c.setProTurismo( c.getPredial() * 0.15f);
+end
+
+//----------------------------------
+
+rule "ADICIONAL TURISTICA A BALDIO"
+    when
+    c : Casa( zona == "TURISTICA A BALDIO")
+    then
+    c.setProTurismo( c.getPredial() * 0.15f);
+end
+
+//----------------------------------
+
+rule "ADICIONAL TURISTICA B EDIFICADA"
+    when
+    c : Casa( zona == "TURISTICA B EDIFICADA")
+    then
+    c.setProTurismo( c.getPredial() * 0.15f);
+end
+
+//----------------------------------
+
+rule "ADICIONAL TURISTICA B BALDIO"
+    when
+    c : Casa( zona == "TURISTICA B BALDIO")
+    then
+    c.setProTurismo( c.getPredial() * 0.15f);
 end

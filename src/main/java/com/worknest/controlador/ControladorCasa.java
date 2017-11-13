@@ -28,10 +28,12 @@ public class ControladorCasa {
 
 		Casa casa = new Casa();
                 casa.setValorCatastral(10000);
-                casa.setTipoDePredio("URBANO A");
+                casa.setTipoDePredio("URBANO EDIFICADO");
+                casa.setZona("TURISTICA A EDIFICADA");
                 casa.calcularDescuento(0);
 		servicio.getProductDiscount(casa);
-
+                casa.calcularTotal();
+                
 		return casa;
 	}
     
